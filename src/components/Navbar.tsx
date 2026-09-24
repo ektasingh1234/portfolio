@@ -53,15 +53,9 @@ export default function Navbar() {
           <div className="w-9 h-9 rounded-xl bg-slate-900 dark:bg-indigo-600 text-white flex items-center justify-center font-mono text-xs font-black group-hover:scale-105 transition-all shadow-sm">
             ES
           </div>
-          <div className="flex flex-col">
-            <span className="text-base font-extrabold leading-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-              {PERSONAL_INFO.name}
-            </span>
-            <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-medium tracking-wider flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              FULL-STACK SDE • AI/ML ENGINEER
-            </span>
-          </div>
+          <span className="text-base font-extrabold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            {PERSONAL_INFO.name}
+          </span>
         </Link>
 
         {/* RIGHT DESKTOP NAV LINKS */}
