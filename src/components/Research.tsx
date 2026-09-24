@@ -3,14 +3,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { RESEARCH_ITEMS } from '@/data/portfolioData';
-import { BookOpen, ShieldCheck, Award } from 'lucide-react';
+import { BookOpen, ShieldCheck, ExternalLink, FileText } from 'lucide-react';
 
 export default function Research() {
   const publications = RESEARCH_ITEMS.filter(r => r.type === 'Publication');
   const patent = RESEARCH_ITEMS.find(r => r.type === 'Patent');
 
   return (
-    <section id="research" className="py-20 lg:py-28 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+    <section id="publications" className="py-20 lg:py-28 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* SECTION HEADER */}
@@ -23,14 +23,14 @@ export default function Research() {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold text-slate-700 dark:text-slate-300 mb-4">
             <span className="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
-            05 — RESEARCH & PATENTS
+            08 — PUBLICATIONS & PATENTS
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-            Research beyond the classroom.
+            Research & Granted Patents.
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg mt-2 font-normal">
-            Applied machine learning research focused on explainable AI, computer vision digital twins, algorithmic persona engineering, and granted utility model patents.
+            Peer-reviewed research papers and granted utility model patents, complete with official verification proofs.
           </p>
         </motion.div>
 
@@ -69,9 +69,24 @@ export default function Research() {
                   </div>
                 </div>
 
-                <div className="bg-slate-900/90 border border-amber-500/30 px-5 py-3 rounded-2xl text-right shrink-0">
-                  <span className="text-xs font-mono text-amber-400 block font-bold">STATUS</span>
-                  <span className="text-sm font-black text-white tracking-tight">GRANTED — 2026</span>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+                  <div className="bg-slate-900/90 border border-amber-500/30 px-5 py-3 rounded-2xl text-center sm:text-right">
+                    <span className="text-xs font-mono text-amber-400 block font-bold">STATUS</span>
+                    <span className="text-sm font-black text-white tracking-tight">GRANTED — 2026</span>
+                  </div>
+
+                  {patent.proofUrl && (
+                    <a
+                      href={patent.proofUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs px-5 py-3.5 rounded-2xl shadow-lg transition-all hover:scale-105"
+                    >
+                      <FileText className="w-4 h-4" />
+                      <span>VIEW PATENT PROOF</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -103,14 +118,29 @@ export default function Research() {
                   "{pub.title}"
                 </h3>
 
-                <p className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400">
+                <p className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 mb-4">
                   {pub.venue}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between font-mono text-xs text-slate-400 dark:text-slate-500">
-                <span>ACCEPTED & PUBLISHED</span>
-                <span>{pub.year}</span>
+              <div>
+                {pub.proofUrl && (
+                  <a
+                    href={pub.proofUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-xs mb-4"
+                  >
+                    <FileText className="w-3.5 h-3.5" />
+                    <span>VIEW PAPER PDF / PROOF</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+
+                <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between font-mono text-xs text-slate-400 dark:text-slate-500">
+                  <span>ACCEPTED & PUBLISHED</span>
+                  <span>{pub.year}</span>
+                </div>
               </div>
             </motion.div>
           ))}

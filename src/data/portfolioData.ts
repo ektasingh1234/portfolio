@@ -51,12 +51,14 @@ export interface SkillCategory {
 export interface ResearchItem {
   id: string;
   title: string;
+  fullTitle?: string;
   venue: string;
   year: string;
   type: 'Publication' | 'Patent';
   status: string;
   country?: string;
   distinctBadge?: string;
+  proofUrl?: string;
 }
 
 export interface CertificationItem {
@@ -235,11 +237,12 @@ export const PROJECTS: Project[] = [
 export const RESEARCH_ITEMS: ResearchItem[] = [
   {
     id: "pub-01",
-    title: "Engineering the Algorithmic Persona",
+    title: "Engineering the Algorithmic Persona: Measuring Digital Professional Identity Using AI, NLP, and Visibility Metrics",
     venue: "ICICI 2026",
     year: "2026",
     type: "Publication",
-    status: "Published"
+    status: "Published",
+    proofUrl: "https://drive.google.com/file/d/1XtYRtpqKxXAZJuQs7b99_ezut_RrLNJ5/view?usp=sharing"
   },
   {
     id: "pub-02",
@@ -247,15 +250,17 @@ export const RESEARCH_ITEMS: ResearchItem[] = [
     venue: "ICTISC / FusionX Global 2025",
     year: "2025",
     type: "Publication",
-    status: "Published"
+    status: "Published",
+    proofUrl: "https://drive.google.com/file/d/14jgdQGNZgS4WbzFPw-GDVxa-APg_BB-I/view?usp=sharing"
   },
   {
     id: "pub-03",
-    title: "Loan Default Prediction with Explainable AI",
+    title: "Loan Default Prediction and Borrower Segmentation with Explainable AI",
     venue: "ICTCS 2025",
     year: "2025",
     type: "Publication",
-    status: "Published"
+    status: "Published",
+    proofUrl: "https://drive.google.com/file/d/170264ZmH4ieiJL3oBzP7vOn6F9PqyE3u/view?usp=sharing"
   },
   {
     id: "patent-01",
@@ -265,7 +270,8 @@ export const RESEARCH_ITEMS: ResearchItem[] = [
     type: "Patent",
     status: "Granted",
     country: "Germany 🇩🇪",
-    distinctBadge: "GERMANY UTILITY MODEL PATENT"
+    distinctBadge: "GERMANY UTILITY MODEL PATENT",
+    proofUrl: "https://drive.google.com/file/d/1T2SqQemy7dUmhb39FK-HcfEck_ca1hDq/view?usp=sharing"
   }
 ];
 

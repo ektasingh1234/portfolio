@@ -10,11 +10,13 @@ import { useTheme } from '@/context/ThemeContext';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Experience', href: '/experience' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Research', href: '/research' },
   { name: 'Skills', href: '/skills' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Experience', href: '/experience' },
+  { name: 'Education', href: '/education' },
+  { name: 'Certifications', href: '/certifications' },
   { name: 'Achievements', href: '/achievements' },
+  { name: 'Publications', href: '/publications' },
   { name: 'Contact', href: '/contact' },
 ];
 
