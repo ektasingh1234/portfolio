@@ -1,0 +1,52 @@
+Ekta Singh
+♂phone+91 9163900952|✉singhekta2004@gmail.com|/linkedinLinkedIn|/githubGitHub|/codeLeetCode|♂¶ap-¶arker-altJaipur, Rajasthan
+Objective
+Computer Science (Data Science) undergraduate with experience in AI/ML, Generative AI, MLOps, and software engineering. Built
+production-oriented RAG systems, machine learning pipelines and scalable AI applications, supported by research publications,
+open-source contributions and industry internship experience.
+Education
+Manipal University Jaipur Aug 2023 – May 2027
+B.Tech in Computer Science and Engineering (Data Science) —CGPA: 8.48Jaipur, Rajasthan
+Skills
+Programming:Python, Java, JavaScript, SQL
+AI/ML & GenAI:Scikit-learn, XGBoost, TensorFlow, RAG, FAISS, BM25, Groq LLaMA3, RAGAS
+LLM:LangChain, Prompt Engineering, AI Agents, Function Calling
+AI T ools & Platforms:ChatGPT, Claude, Gemini, GitHub Copilot, Cursor, Antigravity, Hugging Face, Ollama
+W eb Development:React.js, Node.js, Express.js, FastAPI, Flask, Streamlit, REST APIs
+MLOps & Deployment:MLflow, Feast, Evidently AI, Docker, Redis, Prometheus, Grafana
+Databases & T ools:MySQL, MongoDB, PostgreSQL, Git, GitHub, Power BI, Excel
+CS F undamentals:DSA, OOP, DBMS, Operating Systems, System Design
+Projects
+NeuroSearch|LangChain, FAISS, BM25, Groq LLaMA3, FastAPI, Streamlit|/githubGitHub
+–Built a hybrid RAG-powered semantic search engine using BM25 + FAISS retrieval and Groq LLaMA3 for cited answer
+generation.
+–Achieved 87% RAGAS faithfulness with PDF chat, session memory, SQLite auth, and Dockerized deployment.
+ML Platform|Feast, Evidently AI, MLflow, Redis, Ollama, Prometheus, Grafana, Docker|/githubGitHub
+–Built an end-to-end MLOps platform with Feast feature store, MLflow tracking, Evidently AI monitoring, and Docker
+orchestration.
+–Implemented Redis-backed serving, A/B testing, Ollama batching, and observability via Prometheus and Grafana.
+Experience
+F axLab AI — NVIDIA Inception Program May 2026 – Jul 2026
+AI/ML Intern Remote
+∗Developed machine learning pipelines and AI-driven solutions for real-world applications.
+∗Performed data preprocessing, model training, evaluation, and deployment in collaborative engineering workflows.
+Sportomic Jun 2026 – Jul 2026
+AI Intern Remote
+∗Built AI-powered features for sports venue discovery and management platforms.
+∗Worked on data analysis, automation, and machine learning model development.
+Publications & Patents
+–Engineering the Algorithmic Persona — ICICI 2026
+–Vision-Driven Digital Twin for Disease-Risk Prediction — ICTISC/FusionX Global 2025
+–Loan Default Prediction with Explainable AI — ICTCS 2025
+–AI-Supported Personal Branding System — Utility Model Patent Granted (Germany, 2026)
+Certifications
+–Applied AI / Machine Learning Engineer — micro1 (2026)
+–Introduction to Operating Systems (Elite, Top 5%) — NPTEL IIT Madras (2025)
+–Career Essentials in Generative AI — Microsoft & LinkedIn (2024)
+–Python for Data Science — IBM (2024)
+–AWS APAC Solutions Architecture Job Simulation — Forage
+Achievements & Leadership
+– T op 50 F emale Coders— HackOn with Amazon 6.0
+– Dean’s List— GPA 9.43, 9.10
+– Hackathon Finalist— Top 20/1200+ at MUJ HackX 2.0
+– Promotions Lead— IEEE WIE MUJ

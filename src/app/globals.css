@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F1F5F9;
+    --bg-accent-light: #EEF2FF;
+    
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --text-muted: #94A3B8;
+    
+    --border-color: #E2E8F0;
+    --border-hover: #CBD5E1;
+    --border-accent: #C7D2FE;
+    
+    --accent-primary: #6366F1;
+    --accent-secondary: #8B5CF6;
+    --accent-hover: #4F46E5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366F1;
+}
+
+/* Custom Utilities */
+.font-mono {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.bg-grid-pattern {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: #C7D2FE;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(99, 102, 241, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Keyframes */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 35s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+/* Hide default cursor on desktop when custom cursor active */
+@media (min-width: 1024px) {
+  .custom-cursor-active, .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Hide Next.js dev mode bottom-left indicator badge */
+nextjs-portal,
+#nextjs-toast-errors-parent,
+[data-nextjs-toast],
+[data-nextjs-dialog-overlay] {
+  display: none !important;
+  visibility: hidden !important;
 }
