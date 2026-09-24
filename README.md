@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open https://portfolio-ke8zxfy4t-ektasingh1234s-projects.vercel.app/ with your browser to see the result.
+Open https://portfolio-11mhd1p02-ektasingh1234s-projects.vercel.app/ with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
