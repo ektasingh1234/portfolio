@@ -21,11 +21,11 @@ export default function Projects() {
     else if (phantomCondition === 'Defective') score = 32;
 
     let decision = 'RESELL';
-    let pathColor = 'text-emerald-600 bg-emerald-50 border-emerald-200';
+    let pathColor = 'text-emerald-600 bg-emerald-50 dark:bg-emerald-950/60 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800';
     if (score >= 85) { decision = 'RESELL (Grade A+)'; }
-    else if (score >= 60) { decision = 'REFURBISH & REPACKAGE'; pathColor = 'text-blue-600 bg-blue-50 border-blue-200'; }
-    else if (score >= 40) { decision = 'RECYCLE COMPONENTS'; pathColor = 'text-amber-600 bg-amber-50 border-amber-200'; }
-    else { decision = 'ECO-DISPOSAL'; pathColor = 'text-rose-600 bg-rose-50 border-rose-200'; }
+    else if (score >= 60) { decision = 'REFURBISH & REPACKAGE'; pathColor = 'text-blue-600 bg-blue-50 dark:bg-blue-950/60 dark:text-blue-300 border-blue-200 dark:border-blue-800'; }
+    else if (score >= 40) { decision = 'RECYCLE COMPONENTS'; pathColor = 'text-amber-600 bg-amber-50 dark:bg-amber-950/60 dark:text-amber-300 border-amber-200 dark:border-amber-800'; }
+    else { decision = 'ECO-DISPOSAL'; pathColor = 'text-rose-600 bg-rose-50 dark:bg-rose-950/60 dark:text-rose-300 border-rose-200 dark:border-rose-800'; }
 
     return { score, decision, pathColor };
   };
@@ -37,7 +37,7 @@ export default function Projects() {
   const mlopsProject = PROJECTS[2];
 
   return (
-    <section id="projects" className="py-20 lg:py-28 bg-slate-50 border-b border-slate-200/80">
+    <section id="projects" className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* SECTION HEADER */}
@@ -48,15 +48,15 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-mono font-bold text-slate-700 mb-4 shadow-2xs">
-            <span className="w-2 h-2 rounded-full bg-indigo-600"></span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold text-slate-700 dark:text-slate-300 mb-4 shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
             04 — PROJECTS
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
             Things I've built.
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg mt-2 font-normal">
+          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg mt-2 font-normal">
             Production-grade AI applications, evaluation-driven RAG pipelines, and scalable MLOps architectures.
           </p>
         </motion.div>
@@ -71,7 +71,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-xl relative overflow-hidden group"
+            className="glass-card bg-white dark:bg-slate-900 p-6 sm:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden group"
           >
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-400"></div>
 
@@ -79,19 +79,19 @@ export default function Projects() {
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <span className="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 font-mono text-xs font-bold border border-indigo-200 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+                  <span className="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 font-mono text-xs font-bold border border-indigo-200 dark:border-indigo-800 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
                     {prismProject.badge}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-medium border border-slate-200">
+                  <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium border border-slate-200 dark:border-slate-700">
                     {prismProject.category}
                   </span>
                 </div>
 
-                <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                <h3 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
                   {prismProject.title}
                 </h3>
-                <p className="text-xs font-mono text-slate-500 font-bold tracking-wider uppercase mt-0.5">
+                <p className="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold tracking-wider uppercase mt-0.5">
                   {prismProject.fullTitle}
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function Projects() {
               <div className="flex items-center gap-3 shrink-0">
                 <button
                   onClick={() => setSelectedProject(prismProject)}
-                  className="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono font-bold flex items-center gap-1.5 transition-colors"
+                  className="px-3.5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center gap-1.5 transition-colors"
                 >
                   <Eye className="w-4 h-4" />
                   <span>Inspect</span>
@@ -110,7 +110,7 @@ export default function Projects() {
                     href={prismProject.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-indigo-600 text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-sm"
+                    className="px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-indigo-600 dark:hover:bg-indigo-600 text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-sm"
                   >
                     <GithubIcon className="w-4 h-4" />
                     <span>GitHub</span>
@@ -133,12 +133,12 @@ export default function Projects() {
               </div>
             </div>
 
-            <p className="text-slate-700 text-base sm:text-lg mb-8 leading-relaxed max-w-4xl font-normal">
+            <p className="text-slate-700 dark:text-slate-300 text-base sm:text-lg mb-8 leading-relaxed max-w-4xl font-normal">
               "{prismProject.description}"
             </p>
 
             {/* HIGHLIGHTED PHANTOM RECOVERY ENGINE BLOCK */}
-            <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 mb-8 border border-slate-800 shadow-2xl relative">
+            <div className="bg-slate-900 dark:bg-slate-950 text-white rounded-2xl p-6 sm:p-8 mb-8 border border-slate-800 shadow-2xl relative">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 border-b border-slate-800 pb-4">
                 <div>
                   <span className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold border border-indigo-500/30 mb-1">
@@ -240,7 +240,7 @@ export default function Projects() {
                   </div>
 
                   <div className={`p-2.5 rounded-lg border text-center font-mono text-xs font-bold ${phantomResult.pathColor}`}>
-                    <span className="text-[10px] text-slate-500 block">OPTIMAL ROUTE:</span>
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 block">OPTIMAL ROUTE:</span>
                     {phantomResult.decision}
                   </div>
                 </div>
@@ -252,15 +252,15 @@ export default function Projects() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               
               {/* PRODUCT PASSPORT */}
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-                <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-800 mb-3 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-indigo-600" />
+              <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 mb-3 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                   PRODUCT PASSPORT (7-STAGE LIFECYCLE TRACKER)
                 </h5>
-                <div className="space-y-1.5 font-mono text-xs text-slate-600">
+                <div className="space-y-1.5 font-mono text-xs text-slate-600 dark:text-slate-300">
                   {prismProject.phantomDetails?.passportStages.map((stage, sIdx) => (
                     <div key={sIdx} className="flex items-center gap-2">
-                      <span className="w-4 h-4 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-[10px] shrink-0">
+                      <span className="w-4 h-4 rounded-full bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 flex items-center justify-center font-bold text-[10px] shrink-0">
                         {sIdx + 1}
                       </span>
                       <span>{stage.substring(3)}</span>
@@ -270,24 +270,24 @@ export default function Projects() {
               </div>
 
               {/* SUSTAINABILITY DASHBOARD */}
-              <div className="p-5 rounded-2xl bg-indigo-50/50 border border-indigo-100">
-                <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-900 mb-3 flex items-center justify-between">
+              <div className="p-5 rounded-2xl bg-indigo-50/50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900">
+                <h5 className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-900 dark:text-indigo-300 mb-3 flex items-center justify-between">
                   <span>SUSTAINABILITY DASHBOARD METRICS</span>
-                  <span className="text-[10px] text-indigo-600 bg-indigo-100 px-2 py-0.5 rounded-full font-mono font-bold">REAL-TIME</span>
+                  <span className="text-[10px] text-indigo-600 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/80 px-2 py-0.5 rounded-full font-mono font-bold">REAL-TIME</span>
                 </h5>
-                <p className="text-xs text-slate-600 mb-4 font-mono">"Real-time Sustainability Impact Dashboard"</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mb-4 font-mono">"Real-time Sustainability Impact Dashboard"</p>
                 <div className="grid grid-cols-3 gap-2 text-center">
-                  <div className="bg-white p-3 rounded-xl border border-indigo-100 shadow-2xs">
-                    <div className="text-lg font-mono font-black text-indigo-700">2.4T</div>
-                    <div className="text-[10px] font-bold text-slate-600">CARBON SAVED</div>
+                  <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-indigo-100 dark:border-indigo-900 shadow-2xs">
+                    <div className="text-lg font-mono font-black text-indigo-700 dark:text-indigo-400">2.4T</div>
+                    <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400">CARBON SAVED</div>
                   </div>
-                  <div className="bg-white p-3 rounded-xl border border-indigo-100 shadow-2xs">
-                    <div className="text-lg font-mono font-black text-emerald-700">18.5k</div>
-                    <div className="text-[10px] font-bold text-slate-600">WASTE DIVERTED</div>
+                  <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-indigo-100 dark:border-indigo-900 shadow-2xs">
+                    <div className="text-lg font-mono font-black text-emerald-700 dark:text-emerald-400">18.5k</div>
+                    <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400">WASTE DIVERTED</div>
                   </div>
-                  <div className="bg-white p-3 rounded-xl border border-indigo-100 shadow-2xs">
-                    <div className="text-lg font-mono font-black text-violet-700">4,200</div>
-                    <div className="text-[10px] font-bold text-slate-600">GREEN CREDITS</div>
+                  <div className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-indigo-100 dark:border-indigo-900 shadow-2xs">
+                    <div className="text-lg font-mono font-black text-violet-700 dark:text-violet-400">4,200</div>
+                    <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400">GREEN CREDITS</div>
                   </div>
                 </div>
               </div>
@@ -295,11 +295,11 @@ export default function Projects() {
             </div>
 
             {/* TECH STACK & FOOTNOTE */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-slate-200">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-slate-200 dark:border-slate-800">
               <div className="flex flex-wrap items-center gap-1.5">
                 <span className="text-xs font-mono font-bold text-slate-400 uppercase mr-2">TECH STACK:</span>
                 {prismProject.techStack.map((t, idx) => (
-                  <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-mono font-medium border border-slate-200">
+                  <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-mono font-medium border border-slate-200 dark:border-slate-700">
                     {t}
                   </span>
                 ))}
@@ -319,25 +319,25 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-md"
+            className="glass-card bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md"
           >
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-mono text-xs font-bold border border-emerald-200">
+                  <span className="px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 font-mono text-xs font-bold border border-emerald-200 dark:border-emerald-800">
                     {neuroProject.badge}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 font-mono text-xs font-bold border border-indigo-200">
+                  <span className="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 font-mono text-xs font-bold border border-indigo-200 dark:border-indigo-800">
                     {neuroProject.secondaryBadge}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-medium border border-slate-200">
+                  <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium border border-slate-200 dark:border-slate-700">
                     {neuroProject.category}
                   </span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight flex items-center gap-3">
+                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-3">
                   {neuroProject.title}
-                  <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                  <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-200 dark:border-emerald-800">
                     87% RAGAS Faithfulness
                   </span>
                 </h3>
@@ -346,7 +346,7 @@ export default function Projects() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => setSelectedProject(neuroProject)}
-                  className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono font-bold flex items-center gap-1.5 transition-colors"
+                  className="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center gap-1.5 transition-colors"
                 >
                   <Eye className="w-4 h-4" />
                   <span>Inspect</span>
@@ -357,7 +357,7 @@ export default function Projects() {
                     href={neuroProject.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-indigo-600 text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-xs"
+                    className="px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-indigo-600 text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-xs"
                   >
                     <GithubIcon className="w-4 h-4" />
                     <span>GitHub Repository</span>
@@ -367,17 +367,17 @@ export default function Projects() {
               </div>
             </div>
 
-            <p className="text-slate-700 text-base mb-6 leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-300 text-base mb-6 leading-relaxed">
               "{neuroProject.description}"
             </p>
 
-            <div className="bg-indigo-50/70 p-3 rounded-xl border border-indigo-100 text-xs font-mono font-bold text-indigo-900 mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-indigo-600"></span>
+            <div className="bg-indigo-50/70 dark:bg-indigo-950/50 p-3 rounded-xl border border-indigo-100 dark:border-indigo-900 text-xs font-mono font-bold text-indigo-900 dark:text-indigo-300 mb-6 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
               BUILT DURING INTERNSHIP — Hybrid BM25 + FAISS retrieval with Groq LLaMA3
             </div>
 
             {/* RAG RETRIEVAL PIPELINE DIAGRAM */}
-            <div className="bg-slate-900 text-white p-5 rounded-2xl border border-slate-800 mb-6">
+            <div className="bg-slate-900 dark:bg-slate-950 text-white p-5 rounded-2xl border border-slate-800 mb-6">
               <div className="text-xs font-mono font-bold text-indigo-400 mb-3 uppercase tracking-wider">
                 RETRIEVAL PIPELINE DIAGRAM:
               </div>
@@ -400,17 +400,17 @@ export default function Projects() {
                 'Cited answer generation',
                 'Dockerized deployment'
               ].map((feat, idx) => (
-                <div key={idx} className="flex items-center gap-2 p-2 rounded-lg bg-slate-100/70 border border-slate-200 text-xs text-slate-800 font-medium">
-                  <CheckCircle className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                <div key={idx} className="flex items-center gap-2 p-2 rounded-lg bg-slate-100/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-slate-200 font-medium">
+                  <CheckCircle className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
                   <span>{feat}</span>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap items-center gap-1.5 pt-4 border-t border-slate-200">
+            <div className="flex flex-wrap items-center gap-1.5 pt-4 border-t border-slate-200 dark:border-slate-800">
               <span className="text-xs font-mono font-bold text-slate-400 uppercase mr-2">TECH STACK:</span>
               {neuroProject.techStack.map((t, idx) => (
-                <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-mono font-medium border border-slate-200">
+                <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-mono font-medium border border-slate-200 dark:border-slate-700">
                   {t}
                 </span>
               ))}
@@ -426,39 +426,39 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-md"
+            className="glass-card bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md"
           >
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-bold">
+                  <span className="px-3 py-1 rounded-full bg-slate-900 dark:bg-slate-800 text-white font-mono text-xs font-bold border border-slate-700">
                     {mlopsProject.badge}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-medium border border-slate-200">
+                  <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs font-medium border border-slate-200 dark:border-slate-700">
                     {mlopsProject.category}
                   </span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
                   {mlopsProject.title}
                 </h3>
               </div>
 
               <button
                 onClick={() => setSelectedProject(mlopsProject)}
-                className="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono font-bold flex items-center gap-1.5 transition-colors self-start lg:self-auto"
+                className="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-mono font-bold flex items-center gap-1.5 transition-colors self-start lg:self-auto"
               >
                 <Eye className="w-4 h-4" />
                 <span>Inspect</span>
               </button>
             </div>
 
-            <p className="text-slate-700 text-base mb-6 leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-300 text-base mb-6 leading-relaxed">
               "{mlopsProject.description}"
             </p>
 
             {/* MLOPS ARCHITECTURE DIAGRAM */}
-            <div className="bg-slate-900 text-white p-5 rounded-2xl border border-slate-800 mb-6">
+            <div className="bg-slate-900 dark:bg-slate-950 text-white p-5 rounded-2xl border border-slate-800 mb-6">
               <div className="text-xs font-mono font-bold text-indigo-400 mb-3 uppercase tracking-wider">
                 END-TO-END MLOPS ARCHITECTURE:
               </div>
@@ -482,17 +482,17 @@ export default function Projects() {
                 'Ollama batching & inference',
                 'Prometheus + Grafana observability'
               ].map((feat, idx) => (
-                <div key={idx} className="flex items-center gap-2 p-2 rounded-lg bg-slate-100/70 border border-slate-200 text-xs text-slate-800 font-medium">
-                  <CheckCircle className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                <div key={idx} className="flex items-center gap-2 p-2 rounded-lg bg-slate-100/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-slate-200 font-medium">
+                  <CheckCircle className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 shrink-0" />
                   <span>{feat}</span>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap items-center gap-1.5 pt-4 border-t border-slate-200">
+            <div className="flex flex-wrap items-center gap-1.5 pt-4 border-t border-slate-200 dark:border-slate-800">
               <span className="text-xs font-mono font-bold text-slate-400 uppercase mr-2">TECH STACK:</span>
               {mlopsProject.techStack.map((t, idx) => (
-                <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-mono font-medium border border-slate-200">
+                <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-mono font-medium border border-slate-200 dark:border-slate-700">
                   {t}
                 </span>
               ))}

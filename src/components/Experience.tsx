@@ -13,7 +13,7 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-20 lg:py-28 bg-white border-b border-slate-200/80">
+    <section id="experience" className="py-20 lg:py-28 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* SECTION HEADER */}
@@ -24,12 +24,12 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-slate-700 mb-4">
-            <span className="w-2 h-2 rounded-full bg-indigo-600"></span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold text-slate-700 dark:text-slate-300 mb-4">
+            <span className="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
             03 — EXPERIENCE
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
             Where I built real systems.
           </h2>
         </motion.div>
@@ -45,7 +45,7 @@ export default function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="glass-card bg-slate-50/80 rounded-3xl border border-slate-200 overflow-hidden shadow-xs"
+                className="glass-card bg-slate-50/80 dark:bg-slate-900/80 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-xs"
               >
                 {/* CARD HEADER / CLICK TRIGGER */}
                 <button
@@ -54,26 +54,26 @@ export default function Experience() {
                 >
                   <div>
                     <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <span className="font-mono text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-md border border-indigo-100">
+                      <span className="font-mono text-xs font-bold text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-950/60 px-2.5 py-1 rounded-md border border-indigo-100 dark:border-indigo-900">
                         EXPERIENCE {exp.id}
                       </span>
                       {exp.badge && (
-                        <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-mono font-bold flex items-center gap-1.5 shadow-2xs">
-                          <Award className="w-3.5 h-3.5 text-emerald-600" />
+                        <span className="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-xs font-mono font-bold flex items-center gap-1.5 shadow-2xs">
+                          <Award className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                           {exp.badge}
                         </span>
                       )}
                     </div>
 
-                    <h3 className="text-2xl font-black text-slate-900 tracking-tight">
-                      {exp.role} <span className="text-indigo-600 font-bold">@ {exp.company}</span>
+                    <h3 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+                      {exp.role} <span className="text-indigo-600 dark:text-indigo-400 font-bold">@ {exp.company}</span>
                     </h3>
                   </div>
 
                   <div className="flex items-center gap-4 shrink-0">
-                    <div className="flex flex-col sm:items-end text-xs font-mono text-slate-500 gap-1">
-                      <span className="flex items-center gap-1.5 font-bold text-slate-800">
-                        <Calendar className="w-3.5 h-3.5 text-indigo-600" />
+                    <div className="flex flex-col sm:items-end text-xs font-mono text-slate-500 dark:text-slate-400 gap-1">
+                      <span className="flex items-center gap-1.5 font-bold text-slate-800 dark:text-slate-200">
+                        <Calendar className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
                         {exp.period}
                       </span>
                       <span className="flex items-center gap-1.5">
@@ -82,44 +82,47 @@ export default function Experience() {
                       </span>
                     </div>
 
-                    <div className={`p-2 rounded-full bg-white border border-slate-200 text-slate-700 transition-transform ${isExpanded ? 'rotate-180 bg-indigo-50 text-indigo-600' : ''}`}>
-                      <ChevronDown className="w-5 h-5" />
+                    <div className={`w-8 h-8 rounded-full bg-slate-200/80 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 transition-transform duration-300 ${
+                      isExpanded ? 'rotate-180 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400' : ''
+                    }`}>
+                      <ChevronDown className="w-4 h-4" />
                     </div>
                   </div>
                 </button>
 
-                {/* EXPANDABLE RESPONSIBILITIES CONTENT */}
+                {/* EXPANDABLE BODY */}
                 <AnimatePresence>
                   {isExpanded && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="border-t border-slate-200/80 px-6 sm:px-8 py-6 bg-white"
+                      transition={{ duration: 0.35, ease: 'easeInOut' }}
+                      className="px-6 pb-6 sm:px-8 sm:pb-8 pt-0 border-t border-slate-200/70 dark:border-slate-800/70"
                     >
-                      <p className="text-slate-700 text-base mb-6 leading-relaxed">
-                        "{exp.description}"
-                      </p>
+                      <div className="pt-6 space-y-4">
+                        <p className="text-slate-700 dark:text-slate-300 text-sm font-medium leading-relaxed">
+                          {exp.description}
+                        </p>
 
-                      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-3">
-                        KEY CONTRIBUTIONS & WORKFLOWS:
-                      </h4>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {exp.responsibilities.map((resp, rIdx) => (
-                          <div
-                            key={rIdx}
-                            className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm font-semibold text-slate-800"
-                          >
-                            <CheckCircle2 className="w-4 h-4 text-indigo-600 shrink-0" />
-                            <span>{resp}</span>
-                          </div>
-                        ))}
+                        <div className="space-y-2.5 pt-2">
+                          <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                            KEY RESPONSIBILITIES & CONTRIBUTIONS:
+                          </h4>
+                          <ul className="space-y-2">
+                            {exp.responsibilities.map((resp, i) => (
+                              <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                                <span>{resp}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
+
               </motion.div>
             );
           })}

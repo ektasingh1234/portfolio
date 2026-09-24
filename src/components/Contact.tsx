@@ -16,7 +16,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-white border-b border-slate-200/80">
+    <section id="contact" className="py-20 lg:py-32 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="max-w-4xl mx-auto text-center">
@@ -28,16 +28,16 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-slate-700 mb-6">
-              <span className="w-2 h-2 rounded-full bg-indigo-600"></span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold text-slate-700 dark:text-slate-300 mb-6">
+              <span className="w-2 h-2 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
               09 — CONTACT
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight mb-6">
               Let's build something intelligent.
             </h2>
 
-            <p className="text-slate-600 text-base sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
+            <p className="text-slate-600 dark:text-slate-300 text-base sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
               Whether you're looking for an AI/ML collaborator, research enthusiast, developer or someone who loves turning ambitious ideas into working systems — I'd love to connect.
             </p>
           </motion.div>
@@ -64,119 +64,116 @@ export default function Contact() {
               href={PERSONAL_INFO.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-indigo-600 text-white font-bold text-sm px-6 py-4 rounded-2xl transition-all shadow-md w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold text-base px-8 py-4 rounded-2xl border border-slate-800 transition-all shadow-md w-full sm:w-auto"
             >
-              <FileText className="w-4 h-4" />
-              <span>VIEW RESUME (CV)</span>
+              <FileText className="w-5 h-5 text-indigo-400" />
+              <span>VIEW RESUME</span>
             </a>
 
             <button
               onClick={handleCopyEmail}
-              className="inline-flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono font-bold text-sm px-6 py-4 rounded-2xl border border-slate-200 transition-colors w-full sm:w-auto cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 bg-slate-50 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-mono text-sm px-6 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 transition-all w-full sm:w-auto cursor-pointer"
             >
               {copied ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-600" />
-                  <span className="text-emerald-700">COPIED TO CLIPBOARD!</span>
+                  <Check className="w-4 h-4 text-emerald-500" />
+                  <span className="text-emerald-600 font-bold">COPIED TO CLIPBOARD!</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4 text-slate-500" />
+                  <Copy className="w-4 h-4 text-slate-400" />
                   <span>COPY EMAIL</span>
                 </>
               )}
             </button>
           </motion.div>
 
-          {/* DIRECT CONTACT INFO GRID */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-3xl mx-auto pt-8 border-t border-slate-200"
-          >
-            <a
-              href={PERSONAL_INFO.contact.gmailUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-indigo-300 transition-all flex items-start gap-4 group"
-            >
-              <div className="p-3 rounded-xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+          {/* CONTACT INFO GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-12">
+            
+            {/* EMAIL CARD */}
+            <div className="glass-card bg-slate-50/80 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">
-                  DIRECT GMAIL
+                <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500 uppercase block mb-1">
+                  EMAIL ADDRESS
                 </span>
-                <span className="text-xs font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                <a
+                  href={`mailto:${PERSONAL_INFO.contact.email}`}
+                  className="font-mono text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors break-all"
+                >
                   {PERSONAL_INFO.contact.email}
-                </span>
+                </a>
               </div>
-            </a>
+            </div>
 
-            <a
-              href={`tel:${PERSONAL_INFO.contact.phone.replace(/\s+/g, '')}`}
-              className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-indigo-300 transition-all flex items-start gap-4 group"
-            >
-              <div className="p-3 rounded-xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+            {/* PHONE CARD */}
+            <div className="glass-card bg-slate-50/80 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 shrink-0">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">
+                <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500 uppercase block mb-1">
                   PHONE / WHATSAPP
                 </span>
-                <span className="text-xs font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                <a
+                  href={`tel:${PERSONAL_INFO.contact.phone.replace(/\s+/g, '')}`}
+                  className="font-mono text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
                   {PERSONAL_INFO.contact.phone}
-                </span>
+                </a>
               </div>
-            </a>
+            </div>
 
-            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-indigo-50 text-indigo-600">
+            {/* LOCATION CARD */}
+            <div className="glass-card bg-slate-50/80 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 shrink-0">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-[11px] font-mono font-bold text-slate-400 block uppercase">
-                  LOCATION
+                <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500 uppercase block mb-1">
+                  LOCATION & CAMPUS
                 </span>
-                <span className="text-xs font-bold text-slate-900">
+                <span className="font-mono text-sm font-bold text-slate-900 dark:text-white block">
                   {PERSONAL_INFO.location}
                 </span>
               </div>
             </div>
-          </motion.div>
 
-          {/* SOCIAL ICONS */}
-          <div className="mt-12 flex items-center justify-center gap-4">
+          </div>
+
+          {/* SOCIAL LINKS ROW */}
+          <div className="pt-8 border-t border-slate-200/80 dark:border-slate-800 flex flex-wrap items-center justify-center gap-4">
             <a
               href={PERSONAL_INFO.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3.5 rounded-2xl bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-700 transition-colors shadow-2xs"
-              aria-label="GitHub Profile"
+              className="inline-flex items-center gap-2 text-xs font-mono font-bold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-2.5 rounded-xl transition-all"
             >
-              <GithubIcon className="w-5 h-5" />
+              <GithubIcon className="w-4 h-4 text-slate-800 dark:text-slate-200" />
+              <span>GITHUB</span>
             </a>
 
             <a
               href={PERSONAL_INFO.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3.5 rounded-2xl bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 transition-colors shadow-2xs"
-              aria-label="LinkedIn Profile"
+              className="inline-flex items-center gap-2 text-xs font-mono font-bold text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-2.5 rounded-xl transition-all"
             >
-              <LinkedinIcon className="w-5 h-5" />
+              <LinkedinIcon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+              <span>LINKEDIN</span>
             </a>
 
             <a
               href={PERSONAL_INFO.social.leetcode}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3.5 rounded-2xl bg-slate-100 hover:bg-amber-500 hover:text-white text-slate-700 transition-colors shadow-2xs"
-              aria-label="LeetCode Profile"
+              className="inline-flex items-center gap-2 text-xs font-mono font-bold text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-2.5 rounded-xl transition-all"
             >
-              <LeetcodeIcon className="w-5 h-5" />
+              <LeetcodeIcon className="w-4 h-4 text-amber-500" />
+              <span>LEETCODE</span>
             </a>
           </div>
 

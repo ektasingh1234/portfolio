@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { ArrowUp } from 'lucide-react';
 import { PERSONAL_INFO } from '@/data/portfolioData';
 import { GithubIcon, LinkedinIcon, LeetcodeIcon } from './SocialIcons';
@@ -11,17 +12,17 @@ export default function Footer() {
   };
 
   const footerNav = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Research', href: '#research' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Achievements', href: '#achievements' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Experience', href: '/experience' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Skills', href: '/skills' },
+    { name: 'Achievements', href: '/achievements' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
-    <footer className="bg-slate-900 text-white pt-16 pb-12 border-t border-slate-800">
+    <footer className="bg-slate-900 dark:bg-slate-950 text-white pt-16 pb-12 border-t border-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-12 border-b border-slate-800 gap-8">
           
@@ -46,13 +47,13 @@ export default function Footer() {
           {/* QUICK NAV LINKS */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-xs text-slate-300">
             {footerNav.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="hover:text-indigo-400 transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
