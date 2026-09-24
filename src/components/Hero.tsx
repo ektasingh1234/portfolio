@@ -10,6 +10,23 @@ import { GithubIcon, LinkedinIcon, LeetcodeIcon } from './SocialIcons';
 export default function Hero() {
   const [imgError, setImgError] = useState(false);
 
+  // Typewriter effect state for Ekta Singh
+  const nameText = "Ekta Singh";
+  const [displayedName, setDisplayedName] = useState('');
+
+  React.useEffect(() => {
+    let idx = 0;
+    const interval = setInterval(() => {
+      if (idx <= nameText.length) {
+        setDisplayedName(nameText.slice(0, idx));
+        idx++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 120);
+    return () => clearInterval(interval);
+  }, []);
+
   // Staggered Container Variants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -58,13 +75,17 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* MAIN HEADING WITH LINE REVEAL & ANIMATED ACCENT */}
+            {/* MAIN HEADING WITH TYPEWRITER ANIMATED NAME */}
             <motion.h1
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.1] mb-6"
             >
-              <span className="block text-2xl sm:text-3xl lg:text-4xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-2">
-                Hi, I am Ekta Singh 👋
+              <span className="block text-2xl sm:text-3xl lg:text-4xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-2 font-sans">
+                Hi, I am{' '}
+                <span className="text-slate-900 dark:text-white underline decoration-indigo-500 underline-offset-4 inline-flex items-center font-black">
+                  {displayedName}
+                  <span className="inline-block w-1.5 h-6 sm:h-8 bg-indigo-600 dark:bg-indigo-400 ml-1 animate-pulse"></span>
+                </span>
               </span>
               Building{' '}
               <span className="text-indigo-600 dark:text-indigo-400 relative inline-block">
