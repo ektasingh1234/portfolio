@@ -74,7 +74,7 @@ export default function Achievements() {
                     <Trophy className="w-10 h-10 text-slate-950 mx-auto mb-2" />
                     <div className="text-2xl font-black uppercase tracking-tight">TOP 50</div>
                     <div className="text-xs font-extrabold uppercase tracking-widest text-slate-900">FEMALE CODERS</div>
-                    <div className="text-[10px] text-slate-900 mt-1 font-bold">BY CODECHEF</div>
+                    <div className="text-[10px] text-slate-900 mt-1 font-bold">HACKON WITH AMAZON 6.0</div>
                   </div>
                 </div>
               </div>
