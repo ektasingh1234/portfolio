@@ -89,7 +89,6 @@ export const PERSONAL_INFO = {
   },
   contact: {
     email: "singhekta2004@gmail.com",
-    phone: "+91 9163900952",
     mailto: "mailto:singhekta2004@gmail.com",
     gmailUrl: "https://mail.google.com/mail/?view=cm&fs=1&to=singhekta2004@gmail.com"
   },

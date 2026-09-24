@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Copy, Check, ArrowRight, FileText } from 'lucide-react';
+import { Mail, MapPin, Copy, Check, ArrowRight, FileText } from 'lucide-react';
 import { PERSONAL_INFO } from '@/data/portfolioData';
 import { GithubIcon, LinkedinIcon, LeetcodeIcon } from './SocialIcons';
 
@@ -89,7 +89,7 @@ export default function Contact() {
           </motion.div>
 
           {/* CONTACT INFO GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-12 max-w-2xl mx-auto">
             
             {/* EMAIL CARD */}
             <div className="glass-card bg-slate-50/80 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-start gap-4">
@@ -105,24 +105,6 @@ export default function Contact() {
                   className="font-mono text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors break-all"
                 >
                   {PERSONAL_INFO.contact.email}
-                </a>
-              </div>
-            </div>
-
-            {/* PHONE CARD */}
-            <div className="glass-card bg-slate-50/80 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 shrink-0">
-                <Phone className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500 uppercase block mb-1">
-                  PHONE / WHATSAPP
-                </span>
-                <a
-                  href={`tel:${PERSONAL_INFO.contact.phone.replace(/\s+/g, '')}`}
-                  className="font-mono text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                >
-                  {PERSONAL_INFO.contact.phone}
                 </a>
               </div>
             </div>
