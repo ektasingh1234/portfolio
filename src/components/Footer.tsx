@@ -13,9 +13,9 @@ export default function Footer() {
 
   const footerNav = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
     { name: 'Experience', href: '/experience' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Research', href: '/research' },
     { name: 'Skills', href: '/skills' },
     { name: 'Achievements', href: '/achievements' },
     { name: 'Contact', href: '/contact' },

@@ -63,6 +63,9 @@ export default function Hero() {
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.1] mb-6"
             >
+              <span className="block text-2xl sm:text-3xl lg:text-4xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-2">
+                Hi, I am Ekta Singh 👋
+              </span>
               Building{' '}
               <span className="text-indigo-600 dark:text-indigo-400 relative inline-block">
                 Intelligent Systems
